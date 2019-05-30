@@ -1,9 +1,9 @@
 package cl.desafiolatam.mvc.example.model;
 
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import java.io.Serializable;
 
-public class User {
+public class User implements Serializable {
+    private Long id;
     private String firstName;
     private String lastName;
     private String email;
@@ -17,6 +17,14 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
